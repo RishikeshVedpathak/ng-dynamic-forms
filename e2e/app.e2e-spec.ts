@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('cme App', () => {
+describe('ng-dynamic-forms App', () => {
   let page: AppPage;
 
   beforeEach(() => {
