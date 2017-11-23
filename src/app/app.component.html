@@ -1,0 +1,17 @@
+<div>
+    <ul *ngIf="forms.length">
+        <li *ngFor="let form of forms; let i=index" (click)="loadNewForm(i)" [ngClass]="{'selected-form':isSelected(i)}">
+            <a>Form - {{form.title}}</a>
+        </li>
+    </ul>
+    <h1>{{selectedForm.title}}</h1>
+    <div class="container" *ngIf="selectedForm.fields">
+        <div>
+            <app-dynamic-form [inputForm]="selectedForm.fields" *ngIf="selectedForm.fields.length" ></app-dynamic-form>
+        </div>
+        <div class="col-1">
+            <h3>Raw JSON</h3>
+            <app-raw-preview [inputForm]="selectedForm.fields" ></app-raw-preview>
+        </div>
+    </div>
+</div>
